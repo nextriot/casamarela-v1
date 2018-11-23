@@ -1,0 +1,25 @@
+
+<section class="mix-container">
+  <md-content class="md-whiteframe-1dp" id="filters" layout="layout" layout-align="space-between center">
+    <div class="mixitup-page-list"></div>
+    <div layout="layout" layout-align="center center"><span class="micro-text">Filter</span>
+      <md-menu>
+        <md-button class="small-button" md-menu-origin="md-menu-origin" ng-mouseenter="$mdMenu.open()" aria-label="Select your language">All</md-button>
+        <md-menu-content class="sub-menu" width="3" ng-mouseleave="$mdMenu.close()">
+          <md-menu-item>
+            <md-button data-filter="all">All</md-button>
+          </md-menu-item>
+          <md-menu-item ng-repeat="(name, title) in options"> 
+            <md-button data-filter="{{ '.' + name }}">{{ title }}</md-button>
+          </md-menu-item>
+        </md-menu-content>
+      </md-menu>
+    </div>
+  </md-content>
+  <div class="gallery" flex="flex" layout="layout" layout-align="start start" layout-wrap="layout-wrap">
+    <div class="mix collection1" flex="100" flex-sm="50" flex-md="25" flex-lg="20">Hi World!</div>
+    <div class="mix collection1" flex="100" flex-sm="50" flex-md="25" flex-lg="20">Hi World!</div>
+    <div class="mix collection2" flex="100" flex-sm="50" flex-md="25" flex-lg="20">Hi World!</div>
+    <div class="mix collection2" flex="100" flex-sm="50" flex-md="25" flex-lg="20">Hi World!</div>
+  </div>
+</section>

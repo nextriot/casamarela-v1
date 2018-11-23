@@ -1,0 +1,31 @@
+
+<div class="bg-grey" layout-padding="layout-padding" layout="column" layout-align="center center" style="height: 100%;">
+  <div flex="50%" layout="column" layout-align="center center">
+    <div class="splash-title p0 mb20">
+      <p class="dark" translate="contact.main">Entre em contato conosco para dúvidas, sugestões e área comercial.</p>
+    </div>
+    <form id="contact-form" style="width: 100%;" ng-submit="ctrl.processForm(ctrl.formData)">
+      <div layout="column" flex="flex">
+        <md-input-container class="md-block" flex="flex">
+          <label translate="contact.name">Name</label>
+          <input ng-model="ctrl.formData.name"/>
+        </md-input-container>
+        <md-input-container class="md-block" flex="flex">
+          <label translate="contact.email">Email</label>
+          <input type="email" ng-model="ctrl.formData.email"/>
+        </md-input-container>
+        <md-input-container class="md-block" flex="flex">
+          <label translate="contact.message">Message</label>
+          <textarea ng-model="ctrl.formData.message" md-maxlength="150" rows="5" md-select-on-focus="md-select-on-focus"></textarea>
+        </md-input-container>
+        <div flex="flex" layout="layout" layout-align="end center">
+          <div flex="flex" flex-gt-xs="30" layout="layout">
+            <md-button class="md-raised md-primary" type="submit" style="width: 100%;" layout="layout" layout-align="center center"><span ng-show="!ctrl.isLoading" translate="contact.send">Send</span>
+              <md-progress-circular class="md-spinner" md-mode="indeterminate" md-diameter="25" ng-show="ctrl.isLoading"></md-progress-circular>
+            </md-button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

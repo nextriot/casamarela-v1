@@ -1,0 +1,21 @@
+
+<div id="stores" layout="column" flex="flex">
+  <div class="segmented-control" layout="layout"><span flex="33" layout="layout" ng-repeat="store in ctrl.stores track by $index">
+      <md-button flex="flex" ng-click="ctrl.selectStore($index)" ng-class="{ active: ctrl.selectedStoreIdx === $index }">{{ store.name }}</md-button></span></div>
+  <div class="store-wrapper" layout="layout" layout-align="space-between center">
+    <div class="details-wrapper" flex="flex" flex-gt-sm="50">
+      <div class="details" layout="column" layout-align="space-between start">
+        <div class="address" layout="column"><span>{{ ctrl.selectedStore.address.line1 }}</span><span>{{ ctrl.selectedStore.address.line2 }}</span><span>{{ ctrl.selectedStore.address.line3 }}</span></div>
+        <div class="phone"><a ng-href="tel:{{ ctrl.selectedStore.telephone.link }}">{{ ctrl.selectedStore.telephone.display }}</a></div>
+      </div>
+    </div>
+    <div class="image-wrapper" flex="50" hide-xs="hide-xs" hide-sm="hide-sm">
+      <div class="image" ng-style="{ 'background-image': 'url(' + ctrl.selectedStore.imageUrl + ')' }" flex="flex" layout="column"></div>
+    </div>
+  </div>
+  <div class="container" id="map" flex="flex" map-lazy-load="http://maps.google.com/maps/api/js?key=AIzaSyAZ0hqF6PiDitIUVyRXPN0R6mUoBWoRG8Q">
+    <ng-map id="gmap" center="{{ ctrl.selectedStore.coords }}" flex="flex">
+      <marker position="{{ ctrl.selectedStore.coords }}" title="{{ ctrl.selectedStore.name }} Store Location" animation="Animation.BOUNCE"></marker>
+    </ng-map>
+  </div>
+</div>

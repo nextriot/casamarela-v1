@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="/">
+    <title ng-bind="pageTitle"></title>
+    <meta name="description" content="A Casamarela é uma multimarca reconhecida no mercado pela curadoria minuciosa de marcas internacionais do ramo de moda noivas. A Empresa tem que tem sede em Piracicaba, Campinas e em São Paulo é referência de qualidade no mercado.">
+    <meta name="keywords" content="noivas, vestido de noivas, casamento, bride, boho bride, vestido importado, vestido de renda, bride, weeding, casamento na praia, casamento no campo, casamento na igreja, noivas do brasil, casar de dia, alta costura, moda noivas, bridal, guia para noivas, conceito noivas, celebração de casamento, festa de casamento, bride2bride, vestidos clássicos, vestidos modernos, vestidos bordados, yolancris, ana campbell, cymbeline, rosa clará, multimarca noivas, multimarca">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Casamarela Noivas">
+    <meta property="og:description" content="A Casamarela é uma multimarca reconhecida no mercado pela curadoria minuciosa de marcas internacionais do ramo de moda noivas. A Empresa tem que tem sede em Piracicaba, Campinas e em São Paulo é referência de qualidade no mercado.">
+    <meta property="og:url" content="http://www.casamarela.com">
+    <meta property="og:site_name" content="Casamentos">
+    <meta property="twitter:card" content="summary">
+    <meta property="twitter:description" content="A Casamarela é uma multimarca reconhecida no mercado pela curadoria minuciosa de marcas internacionais do ramo de moda noivas. A Empresa tem que tem sede em Piracicaba, Campinas e em São Paulo é referência de qualidade no mercado.">
+    <meta property="twitter:title" content="Casamarela Noivas">
+    <meta property="twitter:site" content="@CasamarelaSP">
+    <meta property="twitter:domain" content="Casamentos">
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script>
+      <!-- Facebook Pixel Code -->
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '233084047039874');
+      fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=233084047039874&amp;ev=PageView&amp;noscript=1"></noscript>
+  </head>
+</html><!-- End Facebook Pixel Code -->
+<body ng-controller="GlobalCtrl as ctrl">
+  <div class="spinner-wrapper">
+    <div class="spinner"></div>
+  </div>
+  <div id="wrapper">
+    <div id="header" ng-include="'views/global/header.html'"></div>
+    <div id="main" ui-view></div>
+    <div id="sidenav" ng-include="'views/global/sidenav.html'"></div>
+  </div>
+  <script src="scripts/vendor.min.js"></script>
+  <script src="scripts/bundle.min.js"></script>
+  <script>
+    (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+    function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+    e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+    e.src='//www.google-analytics.com/analytics.js';
+    r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+    ga('create','UA-51139305-1');ga('send','pageview');
+  </script>
+</body>

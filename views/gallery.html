@@ -1,0 +1,34 @@
+
+<div id="gallery">
+  <section class="mix-container">
+    <md-content class="md-whiteframe-1dp" id="filters" layout="layout" layout-align="space-between center">
+      <div flex="flex" layout="layout" layout-align="start center" flex-order-xs="2">
+        <h2>{{ ctrl.pageTitle ? ctrl.pageTitle : ('gallery.defaultPageTitle' | translate) }}</h2><span flex="flex" hide-gt-xs="hide-gt-xs"></span>
+        <div class="mixitup-page-list"></div>
+      </div>
+      <div layout="layout" layout-align="center center" flex-order-xs="1" hide-xs="hide-xs"><span class="micro-text">Filter</span>
+        <md-menu>
+          <md-button class="small-button" md-menu-origin="md-menu-origin" ng-mouseenter="$mdMenu.open()" aria-label="Select your language">{{ ctrl.filterOptionTitle ? ctrl.filterOptionTitle : ('gallery.defaultFilterTitle' | translate) }}</md-button>
+          <md-menu-content class="sub-menu" width="3" ng-mouseleave="$mdMenu.close()">
+            <md-menu-item>
+              <md-button data-filter="all" ng-click="ctrl.updateFilterOption()">All</md-button>
+            </md-menu-item>
+            <md-menu-item ng-repeat="(name, title) in ctrl.slideOptions"> 
+              <md-button data-filter="{{ '.' + name }}" ng-click="ctrl.updateFilterOption(title)">{{ title }}</md-button>
+            </md-menu-item>
+          </md-menu-content>
+        </md-menu>
+      </div>
+    </md-content>
+    <div class="gallery" flex="flex" layout="layout" layout-align="start start" layout-wrap="layout-wrap" lazy-img-container="lazy-img-container">
+      <div class="mix {{ slide.collection }}" ng-repeat="slide in ctrl.slides" flex="50" flex-sm="33" flex-md="25" flex-lg="20" id="{{ ctrl.formatId(slide.image) }}" data-order="{{ $index }}" data-name="{{ slide.name.toLowerCase() }}" ng-click="ctrl.showLightbox(id, slide)">
+        <div class="img">
+          <div class="image-spinner" layout="column" layout-align="center center">
+            <div class="spinner"></div>
+          </div>
+          <div class="image-wrapper b-lazy" flex="flex" data-src="{{ slide.image | safeUrl }}"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

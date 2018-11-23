@@ -1,0 +1,40 @@
+
+<div class="nav-wrapper" layout="layout" layout-align="space-between center">
+  <div flex="flex" hide="hide" show-sm="show-sm"></div>
+  <div class="col-1" flex-order="2"><em id="site-logo"> <a ui-sref="dashboard"><img src="images/logos/casamarela-wordmark.svg" alt="Casamarela logo"/></a></em></div>
+  <div class="col-2" layout="layout" flex="flex" flex-order="1" hide="hide" show-gt-sm="show-gt-sm">
+    <nav layout="layout" layout-padding="layout-padding"><a ui-sref="dashboard" ui-sref-active="active" translate="global.home">Home</a><a href="http://press.casamarela.com" translate="global.press">Press</a><a href="http://blog.casamarela.com" translate="global.blog">Inspiração</a><a ui-sref="stores" ui-sref-active="active" translate="global.locations">Lojas</a>
+      <md-menu><a ui-sref="gallery" ui-sref-active="active" translate="global.gallery" md-menu-origin="md-menu-origin" ng-mouseenter="$mdMenu.open()" aria-label="Select your language">Noivas</a>
+        <md-menu-content class="sub-menu" width="3" ng-mouseleave="$mdMenu.close()">
+          <md-menu-item ng-class="{ active: ctrl.selectedBrand === 'all' }">
+            <md-button ui-sref="gallery" ng-bind="'All'" aria-label="brand"></md-button>
+          </md-menu-item>
+          <md-menu-item ng-repeat="brand in ctrl.brands" ng-class="{ active: brand === ctrl.selectedBrand }">
+            <md-button ui-sref="gallery.brand({ brand: brand.id })" ng-bind="brand.name" aria-label="brand"></md-button>
+          </md-menu-item>
+        </md-menu-content>
+      </md-menu><a ui-sref="contact" ui-sref-active="active" translate="global.contact">Contato</a>
+    </nav>
+  </div>
+  <div class="col-3" layout="layout" layout-align="end center" flex="flex" flex-order="3">
+    <div id="lang-select">
+      <md-menu>
+        <md-button class="small-button" md-menu-origin="md-menu-origin" ng-mouseenter="$mdMenu.open()" aria-label="Select your language">{{ ctrl.selectedLocale }} </md-button>
+        <md-menu-content class="sub-menu" width="2" ng-mouseleave="$mdMenu.close()">
+          <md-menu-item ng-click="ctrl.changeLocale(lang)" ng-repeat="lang in ctrl.locales" ng-class="{ active: lang === ctrl.selectedLocale }">
+            <md-button ng-bind="lang" aria-label="language"></md-button>
+          </md-menu-item>
+        </md-menu-content>
+      </md-menu>
+    </div>
+    <div id="social-buttons" hide="hide" show-gt-sm="show-gt-sm">
+      <md-button class="small-button" href="http://www.instagram.com/casamarelanoivas/" aria-label="link to Instagram page">Instagram</md-button>
+      <md-button class="small-button" href="http://www.facebook.com/casamarelanoivas/" aria-label="link to Facebook page">Facebook</md-button>
+    </div>
+    <div id="hamburger-menu" hide-gt-sm="hide-gt-sm">
+      <md-button class="md-icon-button" ng-click="ctrl.toggleSidenav('right')">
+        <md-icon aria-label="open menu">menu</md-icon>
+      </md-button>
+    </div>
+  </div>
+</div>

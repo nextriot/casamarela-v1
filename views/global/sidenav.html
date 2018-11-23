@@ -1,0 +1,25 @@
+
+<md-sidenav class="md-sidenav-right" id="sidenav" md-component-id="right" md-is-locked-open="false" md-whiteframe="4">
+  <md-toolbar>
+    <h1 class="md-toolbar-tools">Menu</h1>
+  </md-toolbar>
+  <md-content flex="flex" layout="column" layout-padding="layout-padding">
+    <div flex="flex" layout="column">
+      <md-button ui-sref="dashboard" ui-sref-active="active" translate="global.home" ng-click="ctrl.closeSideNav('right')">Home</md-button>
+      <md-button ui-sref="gallery" ui-sref-active="active" translate="global.gallery" ng-click="ctrl.closeSideNav('right')">Noivas</md-button>
+      <md-button ui-sref="stores" ui-sref-active="active" translate="global.locations" ng-click="ctrl.closeSideNav('right')">Lojas</md-button>
+      <md-button href="http://press.casamarela.com" translate="global.press">Press</md-button>
+      <md-button href="http://blog.casamarela.com" translate="global.blog">Inspiração</md-button>
+      <md-button ui-sref="contact" translate="global.contact" ng-click="ctrl.closeSideNav('right')">Contato</md-button>
+    </div>
+    <md-divider></md-divider>
+    <div class="submenu" flex="flex" layout="column">
+      <md-button ng-repeat="brand in ctrl.brands" ui-sref="gallery.brand({ brand: brand.id })" ng-bind="brand.name" aria-label="brand" ng-click="ctrl.closeSideNav('right')"></md-button>
+    </div>
+    <md-divider></md-divider>
+    <div flex="flex" layout="column">
+      <md-button href="http://www.instagram.com/casamarelanoivas/" aria-label="link to Instagram page">Instagram</md-button>
+      <md-button href="http://www.instagram.com/casamarelanoivas/" aria-label="link to Facebook page">Facebook</md-button>
+    </div>
+  </md-content>
+</md-sidenav>

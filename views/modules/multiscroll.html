@@ -1,0 +1,42 @@
+
+<div class="slider" id="multiscroll">
+  <div class="ms-left">
+    <div class="ms-section" ng-repeat="panel in panels track by $index">
+      <div class="content" flex="flex" layout="column" layout-align="center center">
+        <div class="text splash-title" ng-show="$index % 2 === 0"><em ng-bind="panel.title"></em>
+          <md-button class="md-raised md-primary cta-button" ui-sref="gallery.brand({ brand: panel.title.toLowerCase().replace(' ', '-') })">
+            <md-icon class="md-18" aria-label="magnifying glass icon">search</md-icon><span translate="dashboard.exploreButton"></span>
+          </md-button>
+        </div>
+        <div class="image" ng-show="$index % 2 === 1" flex="flex">
+          <div class="img-wrapper" ng-style="{ 'background-image': 'url(http://res.cloudinary.com/casamarela/image/upload/w_auto,c_limit,dpr_2.0,f_auto/{{ panel.image }})' }" flex="flex"></div>
+          <div class="image-text splash-title"><em ng-bind="panel.title"></em>
+            <md-button class="md-raised md-primary cta-button"> 
+              <md-icon class="md-18" aria-label="magnifying glass icon">search</md-icon><span translate="dashboard.exploreButton"></span>
+            </md-button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ms-right">
+    <div class="ms-section" ng-repeat="panel in panels track by $index">
+      <div class="content" flex="flex" layout="column" layout-align="center center">
+        <div class="text splash-title" ng-show="$index % 2 === 1"><em ng-bind="panel.title"></em>
+          <md-button class="md-raised md-primary cta-button" ui-sref="gallery.brand({ brand: panel.title.toLowerCase().replace(' ', '-') })">
+            <md-icon class="md-18" aria-label="magnifying glass icon">search</md-icon><span translate="dashboard.exploreButton"></span>
+            <div class="md-ripple-container"></div>
+          </md-button>
+        </div>
+        <div class="image" ng-show="$index % 2 === 0" flex="flex">
+          <div class="img-wrapper" ng-style="{ 'background-image': 'url(http://res.cloudinary.com/casamarela/image/upload/w_auto,c_limit,dpr_2.0,f_auto/{{ panel.image }})' }" flex="flex"></div>
+          <div class="image-text splash-title"><em ng-bind="panel.title"></em>
+            <md-button class="md-raised md-primary cta-button"> 
+              <md-icon class="md-18" aria-label="magnifying glass icon">search</md-icon><span translate="dashboard.exploreButton"></span>
+            </md-button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

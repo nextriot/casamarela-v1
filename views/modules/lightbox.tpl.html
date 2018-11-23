@@ -1,0 +1,23 @@
+
+<md-dialog flex="70">
+  <div class="lightbox" flex="flex" layout="column">
+    <md-toolbar class="md-primary">
+      <div class="md-toolbar-tools" layout="layout" layout-align="space-between center">
+        <div class="heading" layout="layout">
+          <h2 ng-bind="ctrl.brand"></h2>
+        </div>
+        <button class="md-button md-icon-button" ng-click="ctrl.close()">
+          <md-icon aria-label="close window">close</md-icon>
+        </button>
+      </div>
+    </md-toolbar>
+    <div class="image" flex="flex" bg-image="{{ 'http://res.cloudinary.com/casamarela/image/upload/q_80,w_auto,c_fill,dpr_2.0,f_auto/' + ctrl.image }}">
+      <div class="credits" layout="column" ng-show="ctrl.credits">
+        <div class="credit" ng-repeat="(role, person) in ctrl.credits" layout="layout" layout-align="space-between center">
+          <p class="role">{{ role }}</p>
+          <p class="person">{{ person }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</md-dialog>
